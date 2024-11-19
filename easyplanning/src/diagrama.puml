@@ -1,0 +1,126 @@
+
+ @startuml
+
+ UsuarioDTO--->ReservaDTO
+ UsuarioDTO--->RolDTO
+ ReservaDTO--->CategoriaDTO
+ ReservaDTO--->LocalDTO
+ PaqueteDTO--->CategoriaDTO
+ LocalDTO--->ReservaDTO
+
+  class UsuarioDTO  {
+      private String nombre;
+      private String apellido;
+      private String telefono;
+      private String documento;
+      private String email;
+      private String clave;
+      private Rol rol;
+      public String getNombre()
+      public void setNombre(String nombre)
+      public String getApellido()
+      public void setApellido(String apellido)
+      public String getTelefono()
+      public void setTelefono(String telefono)
+      public String getDocumento()
+      public void setDocumento(String documento)
+      public String getEmail()
+      public void setEmail(String email)
+      public String getClave()
+      public void setClave(String clave)
+      public Rol getRol()
+      public void setRol(Rol rol)
+  }
+
+class RolDTO {
+
+    private Long id;
+    private String descripcion;
+    public Long getId()
+    public void setId(Long id)
+    public String getDescripcion()
+    public void setDescripcion(String descripcion)
+    }
+
+    class ReservaDTO {
+        private Long id;
+        private Local local;
+        private Usuario email;
+        private String estado;
+        private Date fecha;
+        private BigInteger precio;
+        private Categoria categoria;
+        private Paquete paquete;
+        public Long getId()
+        public void setId(Long id)
+        public Local getLocal()
+        public void setLocal(Local local)
+        public Usuario getEmail()
+        public void setEmail(Usuario email)
+        public String getEstado()
+        public void setEstado(String estado)
+        public Date getFecha()
+        public void setFecha(Date fecha)
+        public BigInteger getPrecio()
+        public void setPrecio(BigInteger precio)
+        public Categoria getCategoria()
+        public void setCategoria(Categoria categoria)
+        public Paquete getPaquete()
+        public void setPaquete(Paquete paquete)
+        }
+
+    class PaqueteDTO {
+    private Long id;
+    private String nombre;
+    private String descripcion;
+    public Long getId()
+    public void setId(Long id)
+    public String getNombre()
+    public void setNombre(String nombre)
+    public String getDescripcion()
+    public void setDescripcion(String descripcion)
+}
+
+  class LocalDTO {
+      private Long idLocal;
+      private String nombre;
+      private String ubicacion;
+      private double precio;
+      private Categoria categoria;
+      public Long getIdLocal()
+      public void setIdLocal(Long idLocal)
+      public String getNombre()
+      public void setNombre(String nombre)
+      public String getUbicacion()
+      public void setUbicacion(String ubicacion)
+      public double getPrecio()
+      public void setPrecio(double precio)
+      public Categoria getCategoria()
+      public void setCategoria(Categoria categoria)
+
+  }
+  class CategoriaDTO {
+
+          private Long id;
+          private String descripcion;
+          private List<Paquete> paquetes;
+          private List<Local> locales;
+          public Long getId()
+          public void setId(Long id)
+          public String getDescripcion()
+          public void setDescripcion(String descripcion)
+          public List<Paquete> getPaquetes()
+          public void setPaquetes(List<Paquete> paquetes)
+          public List<Local> getLocales()
+          public void setLocales(List<Local> locales)
+
+  }
+
+
+
+
+
+
+
+  }
+@enduml
